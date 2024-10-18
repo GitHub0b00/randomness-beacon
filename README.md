@@ -16,7 +16,7 @@ MDB/ApplicationTier/routes.py, MDB/ApplicationTier/main.py, MDB/ApplicationTier/
 
 MDB/DatabaseTier/data.json : An example json pulse data.
 
-webpage : This folder contains the frontend files.
+frontend : This folder contains the frontend files.
 
 In addition to these files, the QRNG3 folder: https://qolah.org/repos/qrng3/ from s-15: https://s-fifteen.com/products/random-number-generator needs to be downloaded using subversion in linux, and stored in the local folder together with the run.py and labqrng.py.
 
