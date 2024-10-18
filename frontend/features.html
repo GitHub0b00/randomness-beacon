@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/stylesFeatures.css" />
+    <title>"Interoperable Randomness Beacon"</title>
+</head>
+<body>
+
+    <header>
+        <!-- <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark"> -->
+            <!-- Navbar content -->
+        <!-- </nav> -->
+        <!-- <nav id="header-nav" class="navbar navbar-default">
+            <div class="container">
+            </div>
+        </nav> -->
+        <nav class="navbar navbar-expand bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="beacon.html">Quantum Randomness Beacon</a>
+              <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button> -->
+              <!-- <div class="collapse navbar-collapse" id="navbarNavAltMarkup"> -->
+              <!-- </div> -->
+            </div>
+        </nav>
+        <nav class="navbar navbar-expand bg-body-tertiary">
+            <div class="container-fluid">
+              <!-- <a class="navbar-brand" href="beacon.html">Quantum Randomness Beacon</a> -->
+              <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button> -->
+              <!-- <div class="collapse navbar-collapse" id="navbarNavAltMarkup"> -->
+                <div class="navbar-nav">
+                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link active" aria-current="page" href="features.html">Features</a>
+                    <a class="nav-link" href="beacon.html">The Beacon</a>
+                    <!-- <a class="nav-link disabled" aria-disabled="true">Disabled</a> -->
+                </div>
+              <!-- </div> -->
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <p></p>
+        <p></p>
+        <p></p>
+        <h1 class="display-6">Intro.</h1>
+        <p>
+            Click "The Beacon" button in the navigation bar to access the beacon. Each page on the display you see is named as a "pulse". The data formating and hash chain connection follows the NIST Randomness Beacon Reference <a href="https://csrc.nist.gov/pubs/ir/8213/ipd">[1]</a>.
+        </p>
+    </div>
+    <div class="container">
+        <h1 class="display-6">Data Fields</h1>
+    </div>
+    <div class="container text-left" id="fields">
+        <div class="row mt-3 border">
+            <div class="col">
+                localRandomValue
+            </div>
+            <div class="col">
+                The random string generated in the previous minute.
+            </div>
+        </div>
+        <div class="row mt-3 border">
+            <div class="col">
+                precommitmentValue
+            </div>
+            <div class="col">
+                The hash of localRandomValue of the next pulse.
+            </div>
+        </div>
+        <div class="row mt-3 border">
+            <div class="col">
+                uri
+            </div>
+            <div class="col">
+                The uri linked to the corresponding JSON data. It can be used as an API request to be integrated into your service too.
+            </div>
+        </div>
+        <div class="row mt-3 border">
+            <div class="col">
+                pulseIndex
+            </div>
+            <div class="col">
+                The integer index of the beacon pulse.
+            </div>
+        </div>
+        <div class="row mt-3 border">
+            <div class="col">
+                chainIndex
+            </div>
+            <div class="col">
+                The integer index of the beacon pulse.
+            </div>
+        </div>
+        <div class="row mt-3 border">
+            <div class="col">
+                timeStamp
+            </div>
+            <div class="col">
+                The approximate time that this pulse is generated.
+            </div>
+        </div>
+        <div class="row mt-3 border">
+            <div class="col">
+                previous
+            </div>
+            <div class="col">
+                The previous pulse.
+            </div>
+        </div>
+        <div class="row mt-3 border">
+            <div class="col">
+                hour
+            </div>
+            <div class="col">
+                The outputValue of the first pulse in the hour that the "previous" pulse belongs to.
+            </div>
+        </div>
+        <div class="row mt-3 border">
+            <div class="col">
+                day
+            </div>
+            <div class="col">
+                The outputValue of the first pulse in the day that the "previous" pulse belongs to.
+            </div>
+        </div>
+        <div class="row mt-3 border">
+            <div class="col">
+                month
+            </div>
+            <div class="col">
+                The outputValue of the first pulse in the month that the "previous" pulse belongs to.
+            </div>
+        </div>
+        <div class="row mt-3 border">
+            <div class="col">
+                year
+            </div>
+            <div class="col">
+                The outputValue of the first pulse in the year that the "previous" pulse belongs to.
+            </div>
+        </div>
+        <div class="row mt-3 border">
+            <div class="col">
+                signatureValue
+            </div>
+            <div class="col">
+                The concatenation of all the above fields signed with a private key.
+            </div>
+        </div>
+        <div class="row mt-3 border">
+            <div class="col">
+                outputValue
+            </div>
+            <div class="col">
+                The hash output of the concatenation of all the above fields.
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <p></p>
+        <p></p>
+        <h1 class="display-6">Highlights</h1>
+        <p>
+            Pulses are connected to each other by means of input and output of the hash function. On the one hand, "previous", "hour", "day", "month", and "year" stores the outputValue of the corresponding "previous", "hour", "day", and "month" pulses, where the "outputValue" values are themselves hash of all the other fields' values.
+             On the other hand, "precommitmentValue" stores the hash of the "localRandomValue" of the next pulse.
+        </p>
+    </div>
+
+    <footer class="panel-footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <section id="NQSN" class="col text-center">
+                    <a href="https://nqsn.sg" target="_blank">
+                        <img src="materials/NQSN.png" alt="NQSN" class="img-fluid" width="310">
+                    </a>
+                </section>
+                <section id="SpooQyLab" class="col text-center">
+                    <a href="https://spooqylabs.quantumlah.org/" target="_blank">
+                        <img src="materials/SpooQyLab.png" alt="SpooQyLab" class="img-fluid" width="380">
+                    </a>
+                </section>
+            </div>
+        </div>
+    </footer>
+
+    <!-- <script src="js/jquery-3.7.1.min.js"></script> -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

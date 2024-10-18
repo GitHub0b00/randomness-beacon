@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>"Interoperable Randomness Beacon"</title>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="beacon.html">Quantum Randomness Beacon</a>
+            </div>
+        </nav>
+        <nav class="navbar navbar-expand bg-body-tertiary">
+            <div class="container-fluid">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="features.html">Features</a>
+                    <a class="nav-link active" aria-current="page" href="beacon.html">The Beacon</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <p>&nbsp;</p>
+
+    <p>
+        <font size="+1">Navigate in the chain of pulses one by one.</font>
+    </p>
+    <p>
+        <button onclick="previous();">previous</button>
+        <button onclick="next();">next</button>
+        <button onclick="last();">last</button>
+        <button onclick="first();">first</button>
+        <button onclick="auto();">automaticly update the last pulse</button>
+    </p>
+
+    <p>
+        <font size="+1">Skip to the first pulse of the following corresponding time periods with respect to the previous one pulse of the current pulse.</font>
+    </p>
+    <p>
+        <button onclick="year();">year</button>
+        <button onclick="month();">month</button>
+        <button onclick="day();">day</button>
+        <button onclick="hour();">hour</button>
+    </p>
+
+    <p>
+        <font size="+1">&nbsp; Input the chain id &nbsp;</font>
+        <input id="chainid" type="text" required>
+        <font size="+1">&nbsp; and pulse id &nbsp;</font>
+        <input id="pulseid" type="text" required>
+        <font size="+1">&nbsp; to retrieve the specific pulse. &nbsp;</font>
+        <button onclick="specific();">display</button>
+    </p>
+
+    <p>
+        <button onclick="document.location='streaming/index_streaming.html'" id="streaming">Random numbers live streaming</button>
+    </p>
+
+    <div id="message"></div>
+
+    <div id="dataDisplay">
+        <!-- JSON data will be displayed here -->
+    </div>
+
+    <footer class="panel-footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <section id="NQSN" class="col text-center">
+                    <a href="https://nqsn.sg" target="_blank">
+                        <img src="materials/NQSN.png" alt="NQSN" class="img-fluid" width="310">
+                    </a>
+                </section>
+                <section id="SpooQyLab" class="col text-center">
+                    <a href="https://spooqylabs.quantumlah.org/" target="_blank">
+                        <img src="materials/SpooQyLab.png" alt="SpooQyLab" class="img-fluid" width="380">
+                    </a>
+                </section>
+            </div>
+        </div>
+    </footer>
+
+    <!-- <script src="js/jquery-3.7.1.min.js"></script> -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
