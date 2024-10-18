@@ -1,0 +1,64 @@
+/* div table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid purple;
+    margin-left: auto;
+    margin-right: auto;
+} */
+
+/* .left {
+    text-align: left;
+    width: 200px;
+    color: rgb(26, 68, 239);
+    font-family: sans-serif;
+} */
+
+/* .right {
+    font-family: sans-serif;
+    font-weight: lighter;
+} */
+
+/* td {
+    max-width: 780px;
+    overflow-wrap: break-word;
+} */
+
+#header {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 35px;
+}
+body > p {
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: normal;
+}
+
+button {
+    border: none;
+    padding: 14px 32px;
+    font-size: 16px;
+    margin: 2px;
+    border-radius: 23px;
+}
+
+#message, #metrics {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    font-family: sans-serif;
+    font-size: 17px;
+    font-weight: lighter;
+    overflow-wrap: break-word;
+    max-width: 800px;
+    /* border-bottom: solid; */
+}
+
+/* input {
+    height: 36px;
+    width: 90px;
+    border-radius: 23px;
+    resize: horizontal;
+    text-align: center;
+} */
