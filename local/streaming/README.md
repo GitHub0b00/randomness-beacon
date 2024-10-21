@@ -4,4 +4,4 @@ Current frontend server ip: 47.129.236.129
 
 Current streaming frontend folder: /var/www/web/streaming
 
-In the case that more than one frontend server is deployed with application load balancer. The upload could be done with multiple target servers, or, it is better if the use of Amazon S3 hosting can be explored.
+In the case that more than one frontend server is deployed with application load balancer. The upload should be done with multiple target servers. Or, it is better if the use of Amazon S3 hosting can be explored.
