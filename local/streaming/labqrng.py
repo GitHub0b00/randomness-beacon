@@ -26,6 +26,14 @@ def optical(gate_time, counter):
             ch2[i] = float(data[i][1])
         if data[i][0] == '00001':
             ch1[i] = float(data[i][1])
+    # The above block of code is wrong. The correct version is attached as comments because it has not been tested in this file. The correct version was tested and used for data collection for randomness test, but it was not tested for deployment use in this file.
+    # for i in range(len(data)):
+    #     if data[i][0][2] ==  '1':
+    #         ch3[i] = float(data[i][1])
+    #     if data[i][0][3] == '1':
+    #         ch2[i] = float(data[i][1])
+    #     if data[i][0][4] == '1':
+    #         ch1[i] = float(data[i][1])
 
     # For each timestamp from ch1 and ch2. If there is an detection event from ch3, between the immediate neighbors, who has timestamps that are closer than 5ns away, then it is considered as a coincidance. These coincidance timstamps are selected out and put into the coincidance array.
     coinch1 = np.zeros(len(data))
