@@ -14,6 +14,7 @@ function update () {
         var data = re.split("*");
         if (parseInt(data[4]) != ind) {
             console.log(parseInt(data[1]))
+            // the check for m.length less than 512 is to limit the display length to be less than 512 digits.
             if (m.length < 512) {
                 // m = m + data[0];
                 m = data[0] + m;
