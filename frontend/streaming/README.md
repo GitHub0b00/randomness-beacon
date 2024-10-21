@@ -1,0 +1,1 @@
+word.txt is an example of the document sent to the server for streaming. It contains one string of the format "random bit * g2(0) * heralding efficiency ch1 * heralding efficiency ch2 * a number as index"
