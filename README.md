@@ -61,7 +61,7 @@ To setup the frontend from scratch: Using Ubuntu 22.04 OS as an example.
 
 13. Detach from the current tmux session and start another new tmux session and attach into the new session.
 
-14. In the backend (MDB) folder, start the FastAPI webserver by the command: "uvicorn main:app --host 0.0.0.0 --port 8001 --reload". If the 3-tier system archetecture is used, the incomming call allowed origins might need to be changed. It is set in the "main.py" file in the MDB folder.
+14. In the backend (MDB) folder, start the FastAPI webserver by the command: "uvicorn main:app --host a.b.c.d --port xxxx --reload". The allowed incoming origins is set in the "main.py" file in the MDB folder.
 
 --------------------------------------------------
 Till here, the server is setup. Logout from the SSH connection
