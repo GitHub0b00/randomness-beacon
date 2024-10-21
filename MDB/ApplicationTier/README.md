@@ -2,3 +2,5 @@ This FastAPI application is built based on the tutorial here. https://www.mongod
 
 main.py, model.py, and routes.py are created referenced to this tutorial.
 db_var.py contains variable names for better management of important variables.
+
+More explanation on the CROS definitions that concerns the main.py file: https://fastapi.tiangolo.com/tutorial/cors/
