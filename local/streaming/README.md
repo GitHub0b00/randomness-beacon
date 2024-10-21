@@ -3,3 +3,5 @@ For local.py file, in the file uploading line, please update the scp command: Up
 Current frontend server ip: 47.129.236.129
 
 Current streaming frontend folder: /var/www/web/streaming
+
+In the case that more than one frontend server is deployed with application load balancer. The upload could be done with multiple target servers, or, it is better if the use of Amazon S3 hosting can be explored.
