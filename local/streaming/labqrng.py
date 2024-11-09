@@ -77,7 +77,7 @@ def optical(gate_time, counter):
 
     try:
         g2 = coin / (ct1 * ct2)  # coin denotes the sum of intensities for Intensity_ch1 * Intensity_ch2. In proper definition, both denominator and numerator need to be divided by the total number of "detection plus no-detection". This number will be simply 1 over the detection frequency.
-        # g2 = coin * len(np.nonzero(ch3)) / (ct1 * ct2)   The M.Beck paper suggested this. I don't consider it being more correct than g2 = coin * len(ch3) / (ct1 * ct2).
+        # The M.Beck paper suggested g2 = coin * len(np.nonzero(ch3)) / (ct1 * ct2). I don't consider it being more correct than g2 = coin * len(ch3) / (ct1 * ct2).
     except ZeroDivisionError:
         return string, ["None", "None", "None"]
 #     # Gaurentee that enough bits of randomness are generated
