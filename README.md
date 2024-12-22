@@ -123,7 +123,9 @@ The main idea of error handlnig is to restart the service appropriatly so that t
 
 ### If the lab program stops:
 
-Go to the folder Documents/beacon/2024August16…/run.py in the beacon conda environment. => start the beacon python script with “python run.py” => There will be two prompts: Whether to start a new chain, whether to use a new key pair. 
+Go to the folder Documents/beacon/2024August16…/run.py in the beacon conda environment. => start the beacon python script with “python run.py”
+
+After the command being excuted, two prompts will appear to ask for inputs on: Whether to start a new chain, and whether to use a new key pair. 
 
 #### Whether to start a new chain: two options: “new” and “continue”
 
