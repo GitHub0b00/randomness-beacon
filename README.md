@@ -26,7 +26,7 @@ A private key file for SSH connection and SCP command is required. This key file
 
 The AWS servers setup:
 
-To setup the environment from scratch: Using Ubuntu 22.04 OS as an example.
+Setup the environment from scratch: Using Ubuntu 22.04 OS as an example.
 
 1. Create a new instance of remote machine on AWS.
 
