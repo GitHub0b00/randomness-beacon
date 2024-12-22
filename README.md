@@ -121,11 +121,11 @@ In the database tier machine, the bind_ip setting for the database needs to be t
 ## Error handling
 The main idea of error handlnig is to restart the service appropriatly so that the hash chain is intact. Hash chain and data fields documentation can be found in the NIST reference (https://nvlpubs.nist.gov/nistpubs/ir/2019/NIST.IR.8213-draft.pdf)
 
-#### If the lab program stops:
+### If the lab program stops:
 
 Go to the folder Documents/beacon/2024August16…/run.py in the beacon conda environment. => start the beacon python script with “python run.py” => There will be two prompts: Whether to start a new chain, whether to use a new key pair. 
 
-###### Whether to start a new chain: two options: “new” and “continue”
+#### Whether to start a new chain: two options: “new” and “continue”
 
 When “new” is typed, you enter a chain index
 
@@ -133,16 +133,16 @@ When “continue” is typed, a check on whether the previous pulse exists will 
 
 If the local data.json matches the latest pulse on the cloud display and if the next_locrand.pkl is the locrand corresponding to the current pulse. It is good to choose continue even there is a gap. If not, choose start a new chain. The idea is to decide if a hash chain is intact. This means checking if the previous pulse is intact, and check if the local random value is intact. How to check if the local random value is intact? Compute the SHA512 hash of the local random value.
 
-###### Whether to use a new key pair: two options: “new” and “continue”
+#### Whether to use a new key pair: two options: “new” and “continue”
 
 If a new key pair is chosen, you need to copy and backup the old key pair first, and record the last pulse that the old key is responsible for. This is needed for verification purpose.
 
 To access the remote database: login onto the AWS account. Go to EC2 => instances =>  DatabaseEC2Instance1a => connect. This connects you to the AWS instance where the database runs. The connection is by either SSH or Session Manager. Other connection methods I have not tried.
 
-#### If the internet connection is broken but the lab program is running (meaning that the pulse is generated on the local machine but not sent to the remote machine): 
+### If the internet connection is broken but the lab program is running (meaning that the pulse is generated on the local machine but not sent to the remote machine): 
 start a new chain.
 
-#### If there is problem with the AWS remote servers:
+### If there is problem with the AWS remote servers:
 
 If presentation tier and the application tier are down: login onto them and restart the Apache webserver and / or the FastAPI application. For the FastAPI application, it currently runs on the tmux session. It listens to the localhost and the port number defined in the application load balancer on AWS. It is port 8000 at the moment.
 
