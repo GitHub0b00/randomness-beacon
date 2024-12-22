@@ -141,12 +141,13 @@ If a new key pair is chosen, you need to copy and backup the old key pair first,
 
 To access the remote database: login onto the AWS account. Go to EC2 => instances =>  DatabaseEC2Instance1a => connect. This connects you to the AWS instance where the database runs. The connection is by either SSH or Session Manager. Other connection methods I have not tried.
 
-### If the internet connection is broken but the lab program is running (meaning that the pulse is generated on the local machine but not sent to the remote machine): 
-start a new chain.
+### If the internet connection is broken but the lab program is running (meaning that the pulse is generated on the local machine but not sent to the remote machine):
+
+Start a new chain.
 
 ### If there is problem with the AWS remote servers:
 
 If presentation tier and the application tier are down: login onto them and restart the Apache webserver and / or the FastAPI application. For the FastAPI application, it currently runs on the tmux session. It listens to the localhost and the port number defined in the application load balancer on AWS. It is port 8000 at the moment.
 
-If the database tier is down, update the collection name in “db_var.py” to a new collection, or a new database all together. Restart the mongoDB process in the tmux session.
+If the database tier is down, start a new chain. Restart the mongoDB process in the tmux session.
 
