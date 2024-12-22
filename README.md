@@ -129,11 +129,11 @@ After the command being excuted, two prompts will appear to ask for inputs on: W
 
 #### Whether to start a new chain: two options: “new” and “continue”
 
-When “new” is typed, you enter a chain index
+When “new” is typed, enter a chain index.
 
 When “continue” is typed, a check on whether the previous pulse exists will be conducted by the program. If there is no previous pulse stored on local cache, a new chain will be started.
 
-If the local data.json matches the latest pulse on the cloud display and if the next_locrand.pkl is the locrand corresponding to the current pulse. It is good to choose continue even there is a gap. If not, choose start a new chain. The idea is to decide if a hash chain is intact. This means checking if the previous pulse is intact, and check if the local random value is intact. How to check if the local random value is intact? Compute the SHA512 hash of the local random value.
+If the local data.json matches the latest pulse on the cloud display and if the next_locrand.pkl is the locrand corresponding to the current pulse. It is good to choose continue even there is a gap. If not, choose start a new chain. The idea is to decide if a hash chain is intact. This means checking if the previous pulse is intact, and check if the local random value is intact. How to check if the local random value is intact? Compute the SHA512 hash of the local random value and compare it with the precommitment value of the previous pluse. Explanations can be found in the NIST reference linked.
 
 #### Whether to use a new key pair: two options: “new” and “continue”
 
@@ -149,5 +149,4 @@ start a new chain.
 If presentation tier and the application tier are down: login onto them and restart the Apache webserver and / or the FastAPI application. For the FastAPI application, it currently runs on the tmux session. It listens to the localhost and the port number defined in the application load balancer on AWS. It is port 8000 at the moment.
 
 If the database tier is down, update the collection name in “db_var.py” to a new collection, or a new database all together. Restart the mongoDB process in the tmux session.
-![image](https://github.com/user-attachments/assets/023e756c-fca5-4fdf-b585-91f2e89a7650)
 
