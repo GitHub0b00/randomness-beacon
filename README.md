@@ -24,7 +24,9 @@ A private key file for SSH connection and SCP command is required. This key file
 
 ## Setting up the beacon.
 
-To setup the frontend from scratch: Using Ubuntu 22.04 OS as an example.
+The AWS servers setup:
+
+To setup the environment from scratch: Using Ubuntu 22.04 OS as an example.
 
 1. Create a new instance of remote machine on AWS.
 
@@ -40,37 +42,66 @@ To setup the frontend from scratch: Using Ubuntu 22.04 OS as an example.
 
 4. Create a virtual environment, differnet from the base environment.
 
-5. Install Apache webserver with the command below. The learning resources are listed below.
+Setup the frontend instance.
+
+1. Install Apache webserver with the command below. The learning resources are listed below.
    <img width="779" alt="image" src="https://github.com/GitHub0b00/Randomness-Beacon/assets/173871648/f3a70b30-1818-4e6e-92f6-c186cc840783">
    https://medium.com/@KerrySheldon/ec2-exercise-1-1-host-a-static-webpage-9732b91c78ef
    https://ubuntu.com/tutorials/install-and-configure-apache#1-overview
 
-6. Install MongoDB on Ubuntu 22.04, following the procedure here:
+2. Put the frontend files (webpage) onto the AWS machine.
+
+3. Start the Apache webserver
+
+4. Set the proxy in Apache webserver configuration file so that the incoming requests are redirected into the interna load balancer.
+
+Setup the data tier instance
+
+1. Install MongoDB on Ubuntu 22.04, following the procedure here:
    https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
-7. Start the MongoDB process.
 
-8. Setup a SSH session management tool called tmux.
+2. Start the MongoDB process.
 
-9. Pull the frontend files (webpage) and backend files (MDB) from the github onto the AWS machine. The frontend files in the webpage folder is stored in the folder of /var/www/html on the remote machine. The backend files can be stored in any place of the remote machine.
+3. Setup a SSH session management tool called tmux.
 
-10. Define the correct (desired) database name and collection name in db_var.py.
+4. Put the backend files (MDB) onto the AWS machine. The backend files can be stored in any place of the remote machine.
 
-11. Delete the data.json file in MDB folder.
+5. Define the correct (desired) database name and collection name in db_var.py.
 
-12. Start db.py with the command: "python db.py" or "python3 db.py", in the backend (MDB) folder.
+6. Delete the data.json file in MDB folder.
 
-13. Detach from the current tmux session and start another new tmux session and attach into the new session.
+7. Attach onto a tmux session.
 
-14. In the backend (MDB) folder, start the FastAPI webserver by the command: "uvicorn main:app --host a.b.c.d --port xxxx --reload". The allowed incoming origins is set in the "main.py" file in the MDB folder.
+8. Start db.py with the command: "python db.py" or "python3 db.py", in the backend (MDB) folder.
+
+9. Detach from the current tmux session.
+
+Setup the application tier instance
+
+1. Setup the same SSH session management tool tmux.
+
+2. Put the backend files (MDB) onto the AWS machine. The backend files can be stored in any place of the remote machine.
+
+3. Define the correct (desired) database name and collection name in db_var.py.
+
+4. Delete the data.json file in MDB folder.
+
+5. Attach onto a tmux session.
+
+6. In the backend (MDB) folder, start the FastAPI webserver by the command: "uvicorn main:app --host a.b.c.d --port xxxx --reload". The allowed incoming origins is set in the "main.py" file in the MDB folder.
+
+7. Detach from the current tmux session.
 
 --------------------------------------------------
-Till here, the server is setup. Logout from the SSH connection
+Till here, the servers are setup.
 
-16. On local lab laptop, setup the files in the local folder, put the qrng3 folder into the same directory as the files in the local folder.
+Setup the local program:
 
-17. Connect the S-15 QRNG and/or the lab QRNG
+1. On local lab laptop, setup the files in the local folder, put the qrng3 folder into the same directory as the files in the local folder.
 
-18. Start the data generating process with the command: "python run.py" in the local folder which has the file "run.py", the file "labqrng.py", the folder "Keypair", and the folder "qrng3".
+2. Connect the S-15 QRNG and/or the lab QRNG
+
+3. Start the data generating process with the command: "python run.py" in the local folder which has the file "run.py", the file "labqrng.py", the folder "Keypair", and the folder "qrng3".
 
 ## AWS
 
